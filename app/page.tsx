@@ -1,4 +1,5 @@
 import Link from "next/link";
+import WeatherWidget from "@/components/WeatherWidget";
 
 export default function HomePage() {
   const quickMenus = [
@@ -10,32 +11,29 @@ export default function HomePage() {
 
   return (
     <div className="p-4 space-y-8">
-      {/* 날씨 섹션 */}
-      <div className="bg-white rounded-3xl p-6 shadow-sm border border-gray-100 flex justify-between items-center">
-        <div>
-          <p className="text-gray-500 text-sm">현재 날씨</p>
-          <div className="text-4xl font-bold text-blue-600">24°C</div>
-        </div>
-        <div className="text-5xl">☀️</div>
-      </div>
+      {/* 실시간 날씨 위젯 */}
+      <WeatherWidget />
 
       {/* 요약도 버튼 */}
       <Link href="/summary" className="block w-full bg-blue-600 text-white font-bold text-center py-5 rounded-3xl shadow-lg hover:bg-blue-700 transition-all">
         요약도 보기 →
       </Link>
 
-      {/* 그룹화된 메뉴 섹션 */}
+      {/* 응급시 조치방법 섹션 */}
       <div className="space-y-4">
         <h2 className="text-xl font-bold text-gray-800">응급시 조치방법</h2>
         <div className="bg-white p-4 rounded-3xl shadow-sm border border-gray-100">
-            <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4">
             {quickMenus.map((menu) => (
-                <Link key={menu.title} href={`/menu/${menu.path}`} 
-                className={`${menu.color} text-white p-6 rounded-2xl h-28 flex flex-col justify-end shadow-sm hover:scale-105 transition-transform`}>
+              <Link 
+                key={menu.title} 
+                href={`/manual/${menu.path}`} // menu에서 manual로 경로 변경
+                className={`${menu.color} text-white p-6 rounded-2xl h-28 flex flex-col justify-end shadow-sm hover:scale-105 transition-transform`}
+              >
                 <span className="font-bold text-base">{menu.title}</span>
-                </Link>
+              </Link>
             ))}
-            </div>
+          </div>
         </div>
       </div>
     </div>
