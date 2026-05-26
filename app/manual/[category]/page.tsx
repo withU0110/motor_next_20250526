@@ -5,7 +5,7 @@ const categoryData: Record<string, { title: string; evils: { id: string; name: s
   emergency: {
     title: "구동계통",
     evils: [
-      { id: "e1", name: "[안내륜/안정륜]" },
+      { id: "e1", name: "[안내륜/안정륜] 소음 및 발열" },
       { id: "e2", name: "[주행륜/타이어]" },
       { id: "e3", name: "[기타구동문제]" }
     ]
@@ -13,18 +13,20 @@ const categoryData: Record<string, { title: string; evils: { id: string; name: s
   caution: {
     title: "공압계통",
     evils: [
-      { id: "c1", name: "[제동공기압]" },
-      { id: "c2", name: "[솔레노이드/서보모터]" },
-      { id: "c3", name: "[컴프레셔]" }
+      { id: "c1", name: "[제동공기압] 공기압누설" },
+      { id: "c2", name: "[제동공기압] 공압라인 이상" },
+      { id: "c3", name: "[솔레노이드/서보모터]" },
+      { id: "c4", name: "[컴프레셔]" }
     ]
   },
   contact: {
     title: "제어계통",
     evils: [
-      { id: "ct1", name: "[전기부품]" },
-      { id: "ct2", name: "[PLC]" },
-      { id: "ct3", name: "[충전기]" },
-      { id: "ct4", name: "[통신분야]" }
+      { id: "ct1", name: "[전기부품] 콘센트열화" },
+      { id: "ct2", name: "[전기부품] 단상인버터 출력이상" },
+      { id: "ct3", name: "[PLC]" },
+      { id: "ct4", name: "[충전기]" },
+      { id: "ct5", name: "[통신분야]" }
     ]
   },
   prevention: {

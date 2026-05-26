@@ -89,11 +89,11 @@ export default async function IssueDetailPage({ params }: { params: Promise<{ ca
 
       <div className="p-4 space-y-6 overflow-y-auto">
         {/* 조치 내용 글 */}
-        <div className="bg-gray-50 p-4 rounded-2xl border border-gray-100">
-          <p className="text-gray-700 whitespace-pre-wrap leading-relaxed text-base">{detail.description}</p>
+        <div className="bg-gray-200 p-4 rounded-2xl border border-gray-100">
+          <p className="text-gray-700 font-bold whitespace-pre-wrap leading-relaxed text-base">{detail.description}</p>
         </div>
 
-        {/* 조치 방법 (기존 조치 순서에서 변경 및 번호 삭제) */}
+        {/* 조치 방법 */}
         {detail.steps.length > 0 && (
           <div className="space-y-2">
             <h3 className="font-bold text-gray-800 text-lg">조치 방법</h3>
