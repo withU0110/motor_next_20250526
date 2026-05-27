@@ -14,9 +14,9 @@ const s3 = new S3Client({
 
 // 📌 실제 R2 파일명과 앱에서 보여줄 한글 이름을 일치시키는 변환 사전 (유지보수용)
 const pdfNameMap: Record<string, string> = {
-  "sample.pdf": "구동 및 공압계통 정비 요약본 (샘플)",
-  "motor_guide.pdf": "주전동기 분해 점검 지침서",
-  "air_compressor.pdf": "주공기압축기(CM) 기술 매뉴얼",
+  "motor_manual.pdf": "모터카 유지보수 매뉴얼",
+  "em_guide.pdf": "계기반 경고알람 조치방법",
+  "daily_inspection.pdf": "일상점검 세부방법",
 };
 
 async function getPdfReferences() {
