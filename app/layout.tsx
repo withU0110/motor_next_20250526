@@ -1,28 +1,37 @@
-import "./globals.css";
-import BottomNav from "@/components/BottomNav";
-import Header from "@/components/Header"; // 💡 기존에 Header 컴포넌트가 있다면 활성화
+"use client";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+import { useState, useEffect } from "react";
+import Splash from "@/components/Splash";
+import Header from "@/components/Header";
+import BottomNav from "@/components/BottomNav";
+import "./globals.css";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    // 2초(2000ms) 동안 스플래시를 보여준 뒤 메인 화면으로 전환합니다.
+    const timer = setTimeout(() => {
+      setShowSplash(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <html lang="ko">
-      <body className="bg-gray-100 text-gray-900">
-        {/* 전체 앱을 모바일 크기로 가두고, 화면 전체 높이(100dvh)로 고정하여 바깥 스크롤 방지 */}
+      <body className="bg-gray-100">
         <div className="max-w-md mx-auto bg-white h-[100dvh] flex flex-col relative overflow-hidden shadow-2xl">
           
-          {/* 상단 고정: 헤더 (Header 컴포넌트) */}
+          {/* 스플래시가 켜져있을 때만 화면의 가장 윗단에 덮습니다 */}
+          {showSplash && <Splash />}
+          
           <Header />
-
-          {/* 중앙 가변 영역: 내용물이 길어지면 이 영역 안에서만 독립적으로 스크롤됨 */}
-          <main className="flex-1 overflow-y-auto scrollbar-hide">
+          <main className="flex-1 overflow-y-auto">
             {children}
           </main>
-
-          {/* 하단 고정: 네비게이션 바 */}
           <BottomNav />
+          
         </div>
       </body>
     </html>

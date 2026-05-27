@@ -37,7 +37,9 @@ export async function GET(request: Request) {
   try {
     console.log(`\n📡 기상청 요청 중... (날짜: ${baseDate}, 시간: ${baseTime}, 좌표: ${nx}, ${ny})`);
     
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      next: { revalidate: 1800 } 
+    });
     const textData = await response.text(); // JSON 파싱 전 텍스트로 먼저 받기 (XML 에러 방지)
 
     let data;
