@@ -7,7 +7,7 @@ const categoryData: Record<string, { title: string; evils: { id: string; name: s
     evils: [
       { id: "e1", name: "[안내륜/안정륜] 소음 및 발열" },
       { id: "e2", name: "[주행륜/타이어]" },
-      { id: "e3", name: "[기타구동문제]" }
+      { id: "e3", name: "[기타구동문제] 서보모터드라이버 고장" }
     ]
   },
   caution: {
