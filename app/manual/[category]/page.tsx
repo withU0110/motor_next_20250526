@@ -7,6 +7,7 @@ const categoryData: Record<string, { title: string; evils: { id: string; name: s
     evils: [
       { id: "e1", name: "[안내륜/안정륜] 소음 및 발열" },
       { id: "e2", name: "[주행륜/타이어] 타이어 공기압 부족" },
+      { id: "e4", name: "[제동] 제동불량 " },
       { id: "e3", name: "[기타구동문제] 서보모터드라이버 고장" }
     ]
   },
@@ -15,7 +16,7 @@ const categoryData: Record<string, { title: string; evils: { id: string; name: s
     evils: [
       { id: "c1", name: "[제동공기압] 공기압누설" },
       { id: "c2", name: "[제동공기압] 공압라인 이상" },
-      { id: "c3", name: "[솔레노이드/서보모터]" },
+      { id: "c3", name: "[솔레노이드/서보모터] 솔레노이드 밸브 불량" },
       { id: "c4", name: "[솔레노이드/서보모터] 전자접촉기 고장" },
       { id: "c5", name: "[컴프레셔]" }
     ]
